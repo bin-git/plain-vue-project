@@ -1,0 +1,30 @@
+<div class="banner mini" id="banner">
+	<ul class="list">
+        <jing:banner tag="2">
+            #if("$!item.navigateurl" != "")
+            <li><a href="$!item.navigateurl"><img src="$!item.bannerurl" title="$site.name" alt="$site.name" /></a></li>
+            #else
+            <li><img src="$!item.bannerurl" title="$site.name" alt="$site.name" /></li>
+            #end
+        </jing:banner>
+    </ul>
+	<div class="tipBox"><div class="tip"></div></div>
+</div>
+<div class="searcher" id="searcher">
+  <div class="sousuoL"></div>
+	<div class="seaBox wrap">
+    	<div class="tag">
+        	<h2><font>热门关键词：</font><jing:class key="2" child="false"><a href="$helper.GetSearchUrlExtend($item.id)&where=Title:产品一" title="产品一">产品一</a>
+                <a href="$helper.GetSearchUrlExtend($item.id)&where=Title:产品二" title="产品二">产品二</a>
+                <a href="$helper.GetSearchUrlExtend($item.id)&where=Title:产品三" title="产品三">产品三</a>
+                <a href="$helper.GetSearchUrlExtend($item.id)&where=Title:产品四" title="产品四">产品四</a>
+                <a href="$helper.GetSearchUrlExtend($item.id)&where=Title:产品五" title="产品五">产品五</a>
+          	</jing:class></h2>
+        </div>
+        <div class="sos">
+        	<input type="text" class="txt" value="搜索您最需要的产品" placeholder="搜索您最需要的产品" maxlength="20" id="SearchTxt" />
+            <jing:class key="2" child="false"><input type="hidden"  value="$helper.GetSearchUrlExtend($item.id)"  id="Searchtype" /></jing:class>
+            <input type="submit" class="submit" value="" id="SearchSubmit" />
+        </div>
+    </div>
+</div>

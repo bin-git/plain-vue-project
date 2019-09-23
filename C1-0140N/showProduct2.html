@@ -1,0 +1,37 @@
+<jing:include file="common/top.html" />
+<div class="wrapper" id="wrapper">
+	<jing:include file="common/left.html" />
+    <div class="container" id="container">
+        <jing:include file="common/sitepath.html" />
+        <div class="content" id="content">
+        	<div class="product-content">
+            	<div class="original2">
+                	<img src="$news.proimgurl" title="$news.title" alt="$news.title" />
+                </div>
+                <div class="product-info2">
+                    <h1>$news.title</h1>
+                    <div class="clear"></div>
+                    <dl class="tel">
+                        <dt>全国咨询热线：</dt>
+                        <dd ig-phone>$!site.businessComponents.telehone</dd>
+                    </dl>
+                </div>
+                <div class="clear"></div>
+                <div class="article-container">
+                    <div class="article" id="article">
+                        #if("$!news.content" != "") $!news.content #else $!site.description #end
+                    </div>
+                    <jing:include file="common/share.html" />
+                </div>
+            </div>
+      	</div>
+        <div class="relink">
+        	<p><b>向前：</b><Jing:prev size="20" /></p>
+            <p><b>向后：</b><Jing:next size="20" /></p>
+        </div>
+        <jing:include file="common/recommend.html" />
+    </div>
+    <div class="clear"></div>
+</div>
+<jing:include file="common/bottom.html" />
+<div class="hidden"><Jing:hits update="true" /></div>

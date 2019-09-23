@@ -1,0 +1,28 @@
+<jing:include file="common/top.html" />
+<div class="wrapper" id="wrapper">
+	<jing:include file="common/left.html" />
+    <div class="container" id="container">
+        <jing:include file="common/sitepath.html" />
+        <div class="list-case2">
+        	<dl class="list">
+            	<jing:data name="data" size="7" sort="sortIndex:asc|createDate:desc" pager="true">
+            	<dd class="item">
+                	<div class="img"><a href="$data.pagename"><img src="$helper.getsmallImage($!data.imgurl)" title="$data.title" alt="$data.title" /></a></div>
+                    <h3><a href="$data.pagename" title="$data.title">$helper.size($data.title, 22, true)</a></h3>
+                    <p>#if("$!data.description" != "")$helper.size($!data.description, 60, true) #else $helper.size($!site.description, 60, true) #end</p>
+                    <div class="detail"><a href="$data.pagename" title="了解详情">了解详情>></a></div>
+                </dd>
+                </jing:data>
+                #if("$!dataIndex" == "")
+                <dd ig-null>本栏目暂无资料，请稍后访问...</dd>
+                #end
+            </dl>
+            <div class="clear"></div>
+        </div>
+        #if("$!dataIndex" != "")
+        <jing:pager size="6" />
+        #end
+    </div>
+    <div class="clear"></div>
+</div>
+<jing:include file="common/bottom.html" />

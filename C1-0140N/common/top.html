@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8" />
+<jing:meta />
+<script>
+var host = window.location.host,
+	system = { win: false, mac: false, xll: false },
+	p = navigator.platform,
+	pl = host.substr(4, 6);
+if(pl!="hnjing"){
+	system.win = p.indexOf("Win") == 0; 
+	system.mac = p.indexOf("Mac") == 0; 
+	system.x11 = (p == "X11") || (p.indexOf("Linux") == 0); 
+	if(system.win || system.mac || system.xll){ }else { window.location.href ="http://" + host+"/m"; }
+}
+</script>
+<link rel="stylesheet" type="text/css" href="$template/style/css/style.css" />
+<jing:js ver="1.0"/>
+</head>
+<body>
+<div class="maiHead">
+  <div class="top_box">
+    	<div class="wrap clearfix">
+  		<font>欢迎来到$site.subname官网！</font>
+    	<a href="javascript:;" id="addFavo">加入收藏</a><a href="javascript:;" id="setHome">设为首页  |</a>
+      </div>
+  </div>
+	<div class="wrap">
+		<a href="$index"><img class="logo fl" src="$logo" alt="$site.name" /></a>
+		<div class="topAdv fl">
+			<h3>15年专注于挖土机制造服务</h3>
+			<h4>拥有上千家客户</h4>
+		</div>
+		<div class="topTel fr">
+			<h5>全国服务热线</h5>
+			<h6 ig-phone>$!site.businessComponents.telehone</h6>
+		</div>
+      <div class="clear"></div>
+	</div>
+</div>
+  
+<div class="nav" id="nav" guodu>
+    <ul class="list wrap">
+        <li><a href="$index" title="网站首页">网站首页</a></li>
+        <jing:class>
+        <li #if("$!item.id" == "$topclass.id") class="Nhover" #end>
+            <a href="$item.pagename" title="$item.title" nowrap>$item.title</a>
+        </li>
+        </jing:class>
+    </ul>
+</div>
+#if("$!class.id" != "")
+  <jing:include file="common/banner.html" />
+#end

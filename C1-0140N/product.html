@@ -1,0 +1,28 @@
+<jing:include file="common/top.html" />
+<div class="wrapper" id="wrapper">
+	<jing:include file="common/left.html" />
+    <div class="container" id="container">
+        <jing:include file="common/sitepath.html" />
+        <div class="list-product">
+        	<ul class="list">
+            	<jing:data name="data" size="9" sort="sortIndex:asc|createDate:desc" pager="true">
+            	<li class="item">
+                	<div class="img"><a href="$data.pagename"><img src="$!data.proimgurl" title="$data.title" alt="$data.title" /></a></div>
+                    <h3><a href="$data.pagename" title="$data.title">$helper.size($data.title, 14, true)</a></h3>
+                </li>
+                </jing:data>
+                #if("$!dataIndex" == "")
+                <li ig-null>本栏目暂无资料，请稍后访问...</li>
+                #end
+            </ul>
+            <div class="clear"></div>
+        </div>
+        #if("$!dataIndex" != "")
+        <jing:pager size="6" />
+        #else
+        <br/>
+        #end
+    </div>
+    <div class="clear"></div>
+</div>
+<jing:include file="common/bottom.html" />

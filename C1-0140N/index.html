@@ -1,0 +1,164 @@
+<jing:include file="common/top.html" />
+	<!--banner-->
+<div class="banner" id="banner">
+	<ul class="list">
+        <jing:banner tag="1">
+            #if("$!item.navigateurl" != "")
+            <li><a href="$!item.navigateurl"><img src="$!item.bannerurl" title="$site.name" alt="$site.name" /></a></li>
+            #else
+            <li><img src="$!item.bannerurl" title="$site.name" alt="$site.name" /></li>
+            #end
+        </jing:banner>
+    </ul>
+	<div class="tipBox"><div class="tip"></div></div>
+</div>
+
+<div class="searcher" id="searcher">
+	<div class="seaBox wrap">
+    	<div class="tag">
+        	<h2>热门关键词：<jing:class key="2" child="false"><a href="$helper.GetSearchUrlExtend($item.id)&where=Title:产品三" title="产品三">产品三</a>
+                <a href="$helper.GetSearchUrlExtend($item.id)&where=Title:产品一" title="产品一">产品一</a>
+                <a href="$helper.GetSearchUrlExtend($item.id)&where=Title:哈哈" title="产品二">哈哈</a>
+                <a href="$helper.GetSearchUrlExtend($item.id)&where=Title:田园风格" title="田园风格">田园风格</a>
+                <a href="$helper.GetSearchUrlExtend($item.id)&where=Title:欧式风格" title="欧式风格">欧式风格</a>
+          	</jing:class></h2>
+        </div>
+        <div class="sos" FangDa>
+        	<input type="text" class="txt" value="请输入关键词搜索" placeholder="请输入关键词搜索" maxlength="20" id="SearchTxt" />
+            <jing:class key="2" child="false"><input type="hidden"  value="$helper.GetSearchUrlExtend($item.id)"  id="Searchtype" /></jing:class>
+            <input type="submit" class="submit" value="搜索" id="SearchSubmit" />
+        </div>
+    </div>
+</div>
+
+<div class="ipro">
+  <img src="$template/style/images/shan.png" alt="$site.subname" class="shan" />
+  <jing:class key="2" child="false">
+    <div class="iproTitle">
+    	<div class="iproTitleBox wrap">
+    		<h1>$item.name</h1>
+    		<h2>$item.title</h2>
+    		<p></p>
+    	</div>
+        <a href="$item.pagename" class="imore">home+</a>
+    </div>
+    <div class="iproList wrap">
+    	<ul id="iproList">
+          <jing:class key="$item.id" name="item2" size="5">
+    		<li><a href="$item2.pagename" title="$item2.title">$helper.size($item2.title, 6, true)</a></li>
+            </jing:class>
+          #if($!item2Index == "")
+          	<li><a href="$item.pagename" title="$item.title">$helper.size($item.title, 6, true)</a></li>
+          #end
+          	<div class="clear"></div>
+    	</ul>
+    </div>
+	<div class="iproBox" id="iproBox">
+      <div class="iproScroll" id="iproScroll">
+      <jing:class key="$item.id" name="item4" size="5">
+		<ul>
+          <jing:data key="$item4.id" name="item3" size="8" sort="sortIndex:asc|createDate:desc">
+			<li class="fl"><a href="$item3.pagename" title="$item3.title"><img src="$item3.proimgurl" alt="$item3.title" /><p nowrap>$item3.title</p></a>
+            <div class="iproDrop">
+                  <a href="$item3.pagename" title="$item3.title">$helper.size($item3.title, 11, true)<span>查看详情+</span></a>
+              </div>
+            </li>
+            </jing:data>
+		</ul>
+        </jing:class>
+        <div class="clear"></div>
+        </div>
+	</div>
+    </jing:class>
+</div>
+
+<div class="iabout">
+    <jing:class key="1" child="false">
+	<div class="iaboutBox" id="iaboutBox">
+        <div class="sketchmap  "><p></p><img alt="$site.name" #if("$!item.sketchmap" == "")  src="$template/style/images/aboutimg.png" #else src="$item.sketchmap" #end title="$item.title" alt="$item.title" /></div>
+        <div class="info ">
+          <h1><span>$item.title</span><font>$item.name</font></h1>
+        	<jing:data key="$item.id" name="data" size="1" sort="sortIndex:asc|createDate:desc">
+            <p>$helper.size($!data.description, 350, true)[ <a href="$item.pagename" class="iaboutMore"  rubberBand>查看详情</a> ]</p>
+            </jing:data>
+        </div>
+      <img class="about_ji" src="$template/style/images/about_ji.png" alt="$site.name" />
+    </div>
+    </jing:class>
+</div>
+
+
+<!-- news start -->
+ <div class="wrap clearfix ibt_news_box">
+    <div class="ibt_news">
+    	<jing:class key="3" child="false">
+    	<div class="iproTitle">
+    	<div class="iproTitleBox wrap">
+    		<h1>$item.name</h1>
+    		<h2>$item.title</h2>
+    		<p></p>
+    	</div>
+        <a href="$item.pagename" class="imore">home+</a>
+    </div>
+        <div class="tod bt_news_list">
+          <div class="group fl">
+             <jing:data key="$item.id" name="item3" size="4" sort="sortIndex:asc|createDate:desc">
+               <div class="ServiceCon">
+                 <h1 class="fl"><font>$helper.format($item3.createdate, "yyyy")</font>$helper.format($item3.createdate, "mm.dd")</h1>
+                   <div class="Serv_title fr">
+                   <a href="$item3.pagename" title="$item3.title" nowrap>$helper.size($item3.title, 50, true)</a>
+                   <h6 nowrap>$helper.size($item3.description, 50, true)</h6>
+                   </div>
+               </div>
+             </jing:data>
+         </div>
+          <div class="inewsLeft fr" id="inewsLeft">
+              <div class="inews_tip" guodu></div>
+                <div class="inews_scroll">
+                    <jing:data key="$item.id" name="item2" size="4" sort="sortIndex:asc|createDate:desc">
+                      <div class="inews_scroll_box">
+                                  <a href="$item2.pagename" title="$item2.title"><img  src="$item2.imgurl" alt="$item2.title" title="$item2.title" ></a>
+                        </div>
+                      </jing:data>
+                  </div>
+      		</div>
+            <div class="clear"></div>
+        </div>
+        </jing:class>
+    </div>
+</div>
+
+<div class="icontact">
+	<div class="icontactWrap wrap">
+      <jing:class key="6" child="false">
+      <div class="iproTitle">
+    	<div class="iproTitleBox wrap">
+    		<h1>$item.name</h1>
+    		<h2>$item.title</h2>
+    		<p></p>
+    	</div>
+        <a href="$item.pagename" class="imore">home+</a>
+    </div>
+        <div class="icontactBox">
+		<div class="btContact fr padTop40">
+            <h1><span class="fl">服务热线：</span><font class="fl" ig-phone>$!site.businessComponents.telehone</font></h1>
+            <h6 class="btMap">$site.subname</h6>
+            <h6 class="btSj" ig-phone>$!site.BusinessComponents.SmsNumbers</h6>
+            <h6 class="btTel" ig-phone>$!site.businessComponents.telehone</h6>
+          <h6 class="btQq"><a href="tencent://message/?uin=100000&Menu=yes">100000</a></h6>
+            <h6 class="btMail">jwkj@hnjing.com</h6>
+          	<h6 class="btDizhi">湖南省长沙市麓谷高新区文轩路</h6>
+         </div>
+          
+          <div class="bt_ditu fl">
+          	<div class="bdmap" id="bdmap"></div>
+        <Jing:map container="bdmap" />
+          </div>
+      		<div class="clear"></div>
+          </div>
+        </jing:class>
+        
+	</div>
+</div>
+
+<jing:include file="common/bottom.html" />

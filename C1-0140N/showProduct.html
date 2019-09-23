@@ -1,0 +1,44 @@
+<jing:include file="common/top.html" />
+<div class="wrapper" id="wrapper">
+	<jing:include file="common/left.html" />
+    <div class="container" id="container">
+        <jing:include file="common/sitepath.html" />
+        <div class="content" id="content">
+        	<div class="product-content">
+                <h1>$news.title</h1>
+            	<div class="product-photo">
+                	<div class="original">
+                    	<img src="$news.proimgurl" title="" alt="" />
+                    </div>
+                </div>
+                <div class="product-info">
+                    <dl class="inso">
+                        <dd>产品分类：<span>$class.title</span></dd>
+                    </dl>
+                    <dl class="tel">
+                        <dt>全国咨询热线：</dt>
+                        <dd ig-phone>$!site.businessComponents.telehone</dd>
+                    </dl>
+                    <div class="order">
+                        <a href="#formPost">立即预订</a>
+                    </div>
+                    <jing:include file="common/share.html" />
+                </div>
+                <div class="clear"></div>
+                <div class="article-container">
+                    <div class="article" id="article">
+                        #if("$!news.content" != "") $!news.content #else $!site.description #end
+                    </div>
+                </div>
+            </div>
+      	</div>
+        <div class="relink">
+        	<p><b>上一篇：</b><Jing:prev size="20" /></p>
+            <p><b>下一篇：</b><Jing:next size="20" /></p>
+        </div>
+        <jing:include file="common/recommend.html" />
+    </div>
+    <div class="clear"></div>
+</div>
+<jing:include file="common/bottom.html" />
+<div class="hidden"><Jing:hits update="true" /></div>

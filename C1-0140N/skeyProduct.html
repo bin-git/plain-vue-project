@@ -1,0 +1,33 @@
+<jing:include file="common/top.html" />
+<jing:include file="common/banner.html" />
+<div class="wrapper" id="wrapper">
+	<jing:include file="common/left2.html" />
+    <div class="container" id="container">
+        <div class="location" id="location">
+            <h2>搜索结果</h2>
+            <div class="io">当前位置：<a href="$index" class="home">网站首页</a> <b class="arrow">></b> <span>搜索结果</span> </div>
+        </div>
+        <div class="list-product">
+            <div ig-loading id="loading">正在搜索数据....</div>
+            <Jing:dynamic name="searchfrom">
+        	<ul class="list">
+            	<jing:data name="data" size="16" sort="sortIndex:asc|createDate:desc" pager="true">
+            	<li class="item">
+                	<div class="img"><a href="$data.pagename"><img src="$helper.getsmallImage($!data.proimgurl)" title="$data.title" alt="$data.title" /></a></div>
+                    <h3><a href="$data.pagename" title="$data.title">$helper.size($data.title, 14, true)</a></h3>
+                </li>
+                </jing:data>
+                <script type="text/javascript">$("#loading").remove();</script>
+                #if($dataCount == 0)<li ig-null>抱歉，未找到您需要的信息。</li>#end
+            </ul>
+            <div class="clear"></div>
+            #if($dataCount != 0)
+            <Jing:pager size="5" />
+            <style>.pager { position:relative; top:85px; }</style>
+            #end
+            </Jing:dynamic></div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<jing:include file="common/bottom.html" />

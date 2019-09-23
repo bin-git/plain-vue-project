@@ -1,0 +1,34 @@
+<div class="sidebar" id="sidebar">
+	<jing:class key="2" child="false">
+    <div class="side-menu">
+        <div class="topclass">
+            <h2>$item.title</h2>
+        </div>
+            <dl class="list" id="menu">
+                <jing:class key="$item.id" name="$menu">
+                <dd #if("$class.id" == "$menu.id" || "$class.parentid" == "$menu.id") class="current" #end>
+                    <a href="$menu.pagename#wrapper" title="$menu.title">$menu.title</a>
+                    <ul class="drop" #if("$class.id" == "$menu.id" || "$class.parentid" == "$menu.id") style="display:block;" #end>
+                        <jing:class key="$menu.id" name="$menu2">
+                        <li #if("$class.id" == "$menu2.id") class="current" #end><a href="$menu2.pagename#wrapper" title="$menu2.title">$menu2.title</a></li>
+                        </jing:class>
+                    </ul>
+                </dd>
+                </jing:class>
+                #if("$!menuIndex" == "")
+                <dd><a href="$topclass.pagename#wrapper" title="$topclass.title">$topclass.title</a></dd>
+                #end
+            </dl>
+    </div>
+    </jing:class>
+    <div class="side-contact">
+        <jing:class key="8" child="false">
+        <div class="main">
+            <h2>$item.title</h2>
+        	<jing:data key="$item.id" name="side" size="1" sort="sortIndex:asc|createDate:desc">
+        	<h6>$!side.description</h6>
+            </jing:data>
+        </div>
+        </jing:class>
+    </div>
+</div>

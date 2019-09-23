@@ -1,0 +1,17 @@
+<jing:include file="common/top.html" />
+<div class="wrapper" id="wrapper">
+	<jing:include file="common/left.html" />
+    <div class="container" id="container">
+        <jing:include file="common/sitepath.html" />
+        <div class="article">
+        	<jing:data size="1" name="data" sort="sortIndex:asc|createDate:desc">
+            $!data.content
+            </jing:data>
+            #if("$!dataIndex" == "")
+        	<div ig-null>正在添加资料，请稍后访问...</div>
+            #end
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<jing:include file="common/bottom.html" />

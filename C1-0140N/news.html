@@ -1,0 +1,27 @@
+<jing:include file="common/top.html" />
+<div class="wrapper" id="wrapper">
+	<jing:include file="common/left.html" />
+    <div class="container" id="container">
+        <jing:include file="common/sitepath.html" />
+        <div class="list-news">
+        	<dl class="list">
+            	<jing:data name="data" size="6" sort="sortIndex:asc|createDate:desc" pager="true">
+            	<dd class="item">
+                	<div class="date">$helper.format($data.createDate, 'yyyy-mm-dd')</div>
+                    <h3><a href="$data.pagename" title="$data.title">$helper.size($data.title, 30, true)</a></h3>
+                    <p>#if("$!data.summary" != "")$helper.size($!data.summary, 100, true) #else $helper.size($!site.description, 100, true) #end</p>
+                </dd>
+                </jing:data>
+                #if("$!dataIndex" == "")
+                <dd ig-null>本栏目暂无资料，请稍后访问...</dd>
+                #end
+            </dl>
+            <div class="clear"></div>
+        </div>
+        #if("$!dataIndex" != "")
+        <jing:pager size="6" />
+        #end
+    </div>
+    <div class="clear"></div>
+</div>
+<jing:include file="common/bottom.html" />

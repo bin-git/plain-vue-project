@@ -1,0 +1,29 @@
+<jing:include file="common/top.html" />
+<div class="wrapper" id="wrapper">
+	<jing:include file="common/left.html" />
+    <div class="container" id="container">
+        <jing:include file="common/sitepath.html" />
+        <div class="content" id="content">
+            <div class="news-content">
+                <h1>$news.title</h1>
+                <div class="rap">
+                    <span>发布时间：<b>$helper.format($news.createDate, 'yyyy-mm-dd')</b></span>
+                    <span>浏览量：<b><Jing:hits update="true" /></b> 次</span>
+                  <span>来源：#if($!news.source) $news.source #else 本站 #end</span>
+                  <span>作者：#if($!news.author) $news.author #else 本站 #end</span>
+                </div>
+            </div>
+            <div class="article">
+                #if("$!news.content" != "") $!news.content #else $site.description #end
+            </div>
+            <jing:include file="common/share.html" />
+        </div>
+        <div class="relink">
+        	<p><b>上一篇：</b><Jing:prev size="20" /></p>
+            <p><b>下一篇：</b><Jing:next size="20" /></p>
+        </div>
+        <jing:include file="common/recommend.html" />
+    </div>
+    <div class="clear"></div>
+</div>
+<jing:include file="common/bottom.html" />
