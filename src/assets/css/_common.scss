@@ -1,0 +1,22 @@
+* { margin:0; padding:0; }
+body  { max-width:1920px; margin:0 auto; font:16px/1.5 "Microsoft Yahei", Arial; color:#666; background:#fff; }
+img { border:0px; }
+ul,ol { list-style-type:none; vertical-align:bottom; }
+table { border-collapse:collapse; border-spacing:0; }
+input,textarea,select { font:16px/1 "Microsoft Yahei", Arial; color:#666; outline:0; }
+textarea { resize:none; overflow:auto; }
+h1,h2,h3,h4,h5,h6 { font-size:16px; }
+a { color:#666; text-decoration:none; cursor:pointer; }
+a:hover,a:active { color:#529603; text-decoration:none; }
+.clear { clear:both; font-size:0px; line-height:0px; height:0px; }
+.clearfix:after{content:""; clear:both;font-size:0px; line-height:0px; height:0px; }
+.fl{float: left;}
+.fr{float: right;}
+.hidden { display:none; }
+.center { text-align:center; }
+.arrow { font-family:'Small Fonts'; font-style:normal; }
+.autocut , [nowrap]{ overflow:hidden; text-overflow:ellipsis; white-space:nowrap; word-break:break-all; }
+.wrapper, .wrap { width:1100px; margin:0 auto; position:relative; }
+.wrapper { margin-bottom:50px; min-height:auto; padding-top:30px; }
+[guodu] *{ transition:all 300ms ease;  -webkit-transition:all 300ms ease;}
+[guodu_bg]{ transition: width 2s; -webkit-transition: width 2s;}

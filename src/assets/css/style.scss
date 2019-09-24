@@ -1,0 +1,48 @@
+/*head*/
+.maiHead .top_box{ width:100%; height:26px;background-color: #529603; color:#fff; font-size: 14px;  }
+.maiHead .top_box .wrap{height:26px; line-height: 26px;}
+.maiHead .top_box font{float: left; }
+.maiHead .top_box a{float: right; padding-left:10px;color: #fff;  font-size: 14px; }
+.maiHead .top_box a:hover{  color: #ff5e00;}
+
+.maiHead{height:156px; width: 100%;background:#fff;  }
+.maiHead .logo{   height:60px; margin-right: 18px; margin-top: 36px;}
+.maiHead .topAdv{  height:72px; font-weight: normal; padding-left: 18px; margin-top: 33px; border-left: 1px #a5c87c solid;  }
+.maiHead .topAdv h3{font-size:32px;  height: 36px;    color:#529603; font-weight: bold; line-height: 32px;  font-style: italic;}
+.maiHead .topAdv h4{ font-size:24px; color:#fc6c02;  line-height: 1.4; font-weight: bold;  font-style: italic; }
+.topTel{ height: 70px; background:url(~@/assets/images/tolTel.png) no-repeat left center; padding-left: 76px; margin-top: 29px;}
+.topTel h5{font-weight: normal;  font-size:18px; color:#000000; line-height: 1.4;}
+.topTel h6{color:#ff5e00;  font-size:40px;  line-height: 1.1; }
+
+.nav {height:54px;   background:#529603;  position:relative; z-index:3; }
+.nav .list { height:54px; }
+.nav li { float:left; height:54px; position:relative; text-align:center; }
+.nav li > a { display:block; width:122px; height:54px; line-height:54px;  color:#fff; font-size:18px; } 
+.nav li:hover , .nav li.Nhover{background:#386900; }
+
+
+/*banner*/
+// .banner { width:100%; min-width:1000px; position:relative; overflow:hidden; z-index:2; }
+// .banner ul { width:100%; }
+// .banner li { width:100%; position:absolute; z-index:1; overflow:hidden; background:#F5F5F5; display:none; }
+// .banner li:first-child { display:block; }
+// .banner img { width:1920px; display:block; position:relative; left:50%; margin-left:-960px; top:0; }
+// .banner .tipBox{ height:22px; z-index: 3;  width: 1100px; margin:0 auto; position: relative; bottom:40px; }
+// .banner .tip { width:100%; height:22px; text-align:right; position:absolute; left:0; bottom:0; z-index:3; }
+// .banner .tip span { display:inline-block; width:20px; height:20px; line-height:20px;text-align: center;  border-radius: 4px; color: #fff; background:#529603; margin:0 8px; cursor:pointer;
+// 	transition: background .3s;  -webkit-transition: background .3s; }
+// .banner .tip span.cur { background:#ff5e00; color: #529603;}
+// .banner, .banner ul,.banner img { height:450px; }
+// .banner.mini, .banner.mini ul, .banner.mini img { height:300px; }
+
+.earcher {   border-bottom: 1px #ead8a8 solid; border-radius:6px; height: 48px; margin-bottom:0px; width: 100%; margin:0 auto; margin-top: 1px; }
+.searcher .seaBox{ height: 48px; }
+.searcher .tag h2 { font-weight:normal; color:#333; line-height: 48px; font-size:14px; padding-left: 2px;}
+.searcher .tag h2 a{color:#00663c; padding:0 2px;  font-weight: normal; }
+.searcher .tag h2 a:hover{text-decoration: underline;}
+.searcher .sos { width:307px; height:36px; border: 1px #ead8a8 solid;  position:absolute; right:2px; top:4px;   }
+.searcher .sos .txt { width:100%; height:34px; line-height:36px; border:none;  text-indent: 20px;*text-indent: 10px; color: #06623b;  font-size: 14px;  border: none; 
+	background: #fff;
+}
+.searcher .sos .submit {display: block; position:absolute; right:0;   top:0px; width:56px; height:36px; border: none;  cursor:pointer; color:#fff ;  
+          background-color: #437d00;}
